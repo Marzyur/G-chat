@@ -1,0 +1,8 @@
+{% extends "base.html"%}
+{% block content %}
+<h2>Home</h2>
+{% if session.user_id%}
+<p>Welcome,{{session.user_id}}! <a href="{{url_for('logout')}}">Logout</a></p>
+{% else %}
+<p><a href="{{url_for('login')}}"></a>Login</p>
+{% endblock %}

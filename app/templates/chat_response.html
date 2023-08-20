@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h2>Chat Responses</h2>
+	
+	
+	{% if chat_responses %}
+		<ul>
+			{% for response in chat_responses%}
+				<li>{{ response.text }}</li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>No chat responses found.</p>
+	{% endif %}
+{% endblock %}

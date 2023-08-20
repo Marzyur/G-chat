@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	
+	
+	{% if user_inputs %}
+		<h3 style="font-size:large;font-style: italic;">Frequently asked Questions about Geotech</h3>
+		<ul id="recent-questions" style="display:none;margin-left: 20px;">
+			{% for input in user_inputs %}
+				<li>{{ input }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+	<button id="toggle-btn" style="margin-left: 20px;">Show Recent Questions</button>
+	
+	<form method="POST" action="{{ url_for('chatbot') }}">
+		<label for="user_input" style="font-size: x-large;font-style: italic;color:blue;">Enter your input:</label>
+		<input type="text" name="user_input" id="user_input" required>
+		<button type="submit" style="font-size:small;font-style: italic;color:blue;">Submit</button>
+	</form>
+	
+	<script>
+
+		const toggleBtn = document.querySelector('#toggle-btn');
+		const recentQuestions = document.querySelector('#recent-questions');
+		
+		toggleBtn.addEventListener('click', () => {
+			if (recentQuestions.style.display === 'none') {
+				recentQuestions.style.display = 'block';
+				toggleBtn.innerText = 'Hide Recent Questions';
+			} else {
+				recentQuestions.style.display = 'none';
+				toggleBtn.innerText = 'Show Recent Questions';
+			}
+		});
+	</script>	
+{% endblock %}

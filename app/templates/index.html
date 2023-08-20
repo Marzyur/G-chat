@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8">
+	<title>Generate Image from Text</title>
+	<style>
+		body {
+			background-image: url("/image.png");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+	</style>
+</head>
+<body>
+	
+	<h1>Generate Image from Text</h1>
+	<form action="/generate_image" method="POST">
+		<label for="prompt">Enter a text prompt:</label><br>
+		<textarea id="prompt" name="prompt" rows="5" cols="50"></textarea><br><br>
+		<input type="submit" value="Generate Image">
+	</form>
+	<h1>Generated Image</h1>
+	<img src="{{ image_url }}" alt="Generated Image">
+	<p><a href="/">Generate another image</a></p>
+	<h8 style="margin-top: 300px;margin-left: 50px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">{% block input %}Note:The images generated and Answers by this software are for illustrative purposes only. They do not reflect the views of the creator or owner of this software. The accuracy and authority of the <strong>Generated images,Answers</strong>  cannot be guaranteed. 
+		Users are advised to exercise caution and discretion when using the images for any purpose.{% endblock %}</h8>
+	<footer>
+		<p style="margin-top: 30px;margin-left: 600px;">&copy; 2023 G-chat</p>
+	</footer>
+</body>
+</html>

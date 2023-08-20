@@ -1,0 +1,33 @@
+@keyframes pulse {
+    0% {
+        background-color: #ffffff;
+    }
+    50% {
+        background-color: #ffff00;
+    }
+    100% {
+        background-color: #ffffff;
+    }
+}
+.label {
+    display: block;
+    font-weight: bold;
+  }
+
+  
+input[type="email"],
+  input[type="password"] {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 4px;
+  }
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+  }
+  

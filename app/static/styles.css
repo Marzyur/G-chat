@@ -1,0 +1,66 @@
+/* Define global styles */
+body {
+  font-family: sans-serif;
+}
+
+
+/* Define styles for navigation links */
+nav {
+  background-color:lawngreen;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  height: 150px;
+}
+
+nav a {
+  color: white;
+  text-align: center;
+  padding: 9px 40px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Define styles for chatbot input/output */
+.chat-container {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.user-input {
+  border: black 2px solid ;
+  width: 100%;
+  padding: 10px;
+  margin-top: 100%;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.chatbot-output {
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+
+@keyframes change-color {
+  0% { background-color: #ff69b4; }
+  25% { background-color: #1e90ff; }
+  50% { background-color: #ffff00; }
+  75% { background-color: #00ff7f; }
+  100% { background-color: #ff4500; }
+}
+
+
+header {
+  animation-name: change-color;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}

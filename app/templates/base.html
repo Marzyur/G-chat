@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}G-Chat{% endblock %}</title>
+	{% block css %}
+	
+	{% endblock %}
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	
+</head>
+<body>
+	<section>
+		<h2 style="font-family: Georgia, 'Times New Roman', Times, serif;font-size:x-large ;margin-right: 20px;text-decoration:underline;">{%block Name%}MIT Academy of Engineering{%endblock%}</h2>
+	
+		{% if session.user_id %}
+			<nav>
+				<ul style="margin-left: 1200px; margin-right: 10px;font-style: italic;font-size: 20px;">
+					<li style="color: green;"><a href="{{ url_for('home') }}">Home</a></li>
+					<li><a href="{{ url_for('chat_response') }}">Chat Responses</a></li>
+					<li><a href="{{url_for('Dalle')}}">Image Generator</a></li>
+					<li><a href="{{ url_for('logout') }}">Logout</a></li>
+				</ul>
+			</nav>
+		{% else %}
+			<nav>
+				<ul style="margin-left: 1200px; margin-right: 10px;font-style: italic;font-size: 20px;">
+					<!-- <li><a href="{{ url_for('home') }}">Home</a></li> -->
+					<li><a href="{{ url_for('signup') }}">Sign up</a></li>
+					<li><a href="{{ url_for('login') }}">Login</a></li>
+				</ul>
+			</nav>
+		{% endif %}
+		
+		<div class="container">
+			{% block content %}{% endblock %}
+		</div>
+		<h8 style="margin-top: 300px;margin-left: 50px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">{% block input %}Note:The images generated and Answers by this software are for illustrative purposes only. They do not reflect the views of the creator or owner of this software. The accuracy and authority of the <strong>Generated images,Answers</strong>  cannot be guaranteed. 
+			Users are advised to exercise caution and discretion when using the images for any purpose.
+			{% endblock %}</h8>
+	  <footer>
+		<p style="margin-top: 30px;margin-left: 600px;">&copy; 2023 G-chat</p>
+	  </footer>
+		
+		{% block js %}{% endblock %}
+	</section>
+	
+</body>
+</html>
+
+    
+    
+    
+    
+    
+    
